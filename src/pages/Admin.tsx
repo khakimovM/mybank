@@ -30,7 +30,7 @@ function LoginForm({ onLogin }: { onLogin: () => void }) {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setError('');
@@ -49,7 +49,7 @@ function LoginForm({ onLogin }: { onLogin: () => void }) {
   };
 
   return (
-    <div className="min-h-[60vh] flex items-center justify-center px-4">
+    <div className="flex-1 flex items-center justify-center px-4 py-8">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-orange-100 overflow-hidden">
         <div className="bg-linear-to-r from-orange-500 to-orange-700 px-8 py-6 text-white text-center">
           <ShieldCheck className="w-10 h-10 mx-auto mb-2 opacity-90" />
@@ -137,7 +137,7 @@ function Dashboard({ onLogout }: { onLogout: () => void }) {
     }
   };
 
-  const handleSave = (e: React.FormEvent) => {
+  const handleSave = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const anyZero = FIELDS.some(
@@ -330,9 +330,13 @@ export default function Admin() {
     navigate('/');
   };
 
-  return isAuthenticated ? (
-    <Dashboard onLogout={handleLogout} />
-  ) : (
-    <LoginForm onLogin={() => setIsAuthenticated(true)} />
+  return (
+    <div className="flex-1 flex flex-col">
+      {isAuthenticated ? (
+        <Dashboard onLogout={handleLogout} />
+      ) : (
+        <LoginForm onLogin={() => setIsAuthenticated(true)} />
+      )}
+    </div>
   );
 }

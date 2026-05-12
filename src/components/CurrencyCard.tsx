@@ -19,19 +19,19 @@ export default function CurrencyTable({
           <tr className="bg-orange-600 text-white">
             <th
               scope="col"
-              className="py-5 px-8 text-left font-bold text-sm uppercase tracking-widest"
+              className="py-5 px-8 text-left font-bold text-sm uppercase tracking-widest align-middle"
             >
               Valyuta
             </th>
             <th
               scope="col"
-              className="py-5 px-8 text-right font-bold text-sm uppercase tracking-widest text-emerald-200"
+              className="py-5 px-8 text-right font-bold text-sm uppercase tracking-widest text-emerald-200 align-middle"
             >
               Sotib olish
             </th>
             <th
               scope="col"
-              className="py-5 px-8 text-right font-bold text-sm uppercase tracking-widest text-red-200"
+              className="py-5 px-8 text-right font-bold text-sm uppercase tracking-widest text-red-200 align-middle"
             >
               Sotish
             </th>
@@ -50,7 +50,7 @@ export default function CurrencyTable({
                 }`}
               >
                 {/* Currency info cell */}
-                <td className="py-8 px-8">
+                <td className="py-8 px-8 align-middle">
                   <div className="flex items-center gap-4">
                     <span
                       className="text-4xl leading-none shrink-0"
@@ -76,7 +76,7 @@ export default function CurrencyTable({
                 </td>
 
                 {/* Buy price cell */}
-                <td className="py-8 px-8 text-right">
+                <td className="py-8 px-8 text-right align-middle">
                   <p className="text-3xl font-black text-emerald-600 tabular-nums leading-none">
                     {fmt(rate.buy)}
                   </p>
@@ -84,7 +84,7 @@ export default function CurrencyTable({
                 </td>
 
                 {/* Sell price cell */}
-                <td className="py-8 px-8 text-right">
+                <td className="py-8 px-8 text-right align-middle">
                   <p className="text-3xl font-black text-red-500 tabular-nums leading-none">
                     {fmt(rate.sell)}
                   </p>
