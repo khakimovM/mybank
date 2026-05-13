@@ -14,7 +14,6 @@ export type CurrencyCode = keyof Rates;
 export interface CurrencyInfo {
   code: CurrencyCode;
   name: string;
-  flag: string;
   symbol: string;
 }
 
